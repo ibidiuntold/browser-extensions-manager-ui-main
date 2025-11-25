@@ -1,0 +1,302 @@
+/* Browser Extensions Manager UI Styles */
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light theme colors */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+  
+  /* Red colors */
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+  
+  /* Light theme variables */
+  --bg-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  --bg-color: var(--neutral-0);
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --card-bg: #ffffff;
+  --card-border: var(--neutral-200);
+  --button-bg: var(--neutral-100);
+  --button-text: var(--neutral-600);
+  --button-active-bg: var(--neutral-900);
+  --button-active-text: #ffffff;
+}
+
+body.dark-theme {
+  /* Dark theme variables */
+  --bg-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --bg-color: var(--neutral-900);
+  --text-primary: #ffffff;
+  --text-secondary: var(--neutral-300);
+  --card-bg: var(--neutral-800);
+  --card-border: var(--neutral-700);
+  --button-bg: var(--neutral-700);
+  --button-text: var(--neutral-300);
+  --button-active-bg: #ffffff;
+  --button-active-text: var(--neutral-900);
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header Styles */
+.header {
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.theme-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+.light-icon {
+  opacity: -50;
+}
+
+.dark-icon {
+  opacity: 50;
+}
+
+body.dark-theme .light-icon {
+  opacity: 50;
+}
+
+body.dark-theme .dark-icon {
+  opacity: 0;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 0.75rem 1.5rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn.active {
+  background: var(--button-active-bg);
+  color: var(--button-active-text);
+  border-color: var(--button-active-bg);
+}
+
+/* Extensions Grid */
+.extensions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Extension Card */
+.extension-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.extension-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.extension-card.inactive {
+  opacity: 0.6;
+}
+
+.extension-card.inactive .extension-logo {
+  filter: grayscale(100%);
+}
+
+.extension-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.extension-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.extension-info {
+  flex: 1;
+}
+
+.extension-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.extension-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.remove-btn {
+  background: var(--red-500);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.remove-btn:hover {
+  background: var(--red-700);
+  transform: translateY(-1px);
+}
+
+.remove-btn:active {
+  transform: translateY(0);
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 2rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .extensions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .extension-card {
+    padding: 1rem;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .extension-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .extension-logo {
+    align-self: center;
+  }
+}
