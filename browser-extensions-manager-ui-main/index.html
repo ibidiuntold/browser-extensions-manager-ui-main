@@ -14,17 +14,21 @@
   <div class="container">
     <header class="header">
       <div class="header-content">
-        <h1 class="title">Extensions List</h1>
+        <img src="./assets/images/logo.svg" alt="Browser Extensions Manager Logo" class="logo">
         <button class="theme-toggle" aria-label="Toggle theme">
           <img src="./assets/images/icon-sun.svg" alt="Light theme" class="theme-icon light-icon">
           <img src="./assets/images/icon-moon.svg" alt="Dark theme" class="theme-icon dark-icon">
         </button>
       </div>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="active">Active</button>
-        <button class="filter-btn" data-filter="inactive">Inactive</button>
+      <div class="divider">
+        <div class="title">Extensions List</div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="inactive">Inactive</button>
+        </div>
       </div>
+      
     </header>
 
     <main class="extensions-grid">
@@ -163,42 +167,12 @@
 
     <footer class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-      Coded by <a href="www.linkedin.com/in/iyango-williams-657504249">Iyango Williams</a>.
+      Coded by <a href="www.linkedin.com/in/iyango-williams-657504249">Iyango Williams</a>
     </footer>
   </div>
 
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    const body = document.body;
-    
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-theme');
-    });
-
-    // Filter functionality
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const extensionCards = document.querySelectorAll('.extension-card');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        const filter = button.dataset.filter;
-        
-        extensionCards.forEach(card => {
-          if (filter === 'all') {
-            card.style.display = 'flex';
-          } else {
-            const status = card.dataset.status;
-            card.style.display = status === filter ? 'flex' : 'none';
-          }
-        });
-      });
-    });
+  <script src="./script.js">
+   
   </script>
 </body>
 </html>

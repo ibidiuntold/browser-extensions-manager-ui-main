@@ -75,10 +75,35 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: solid 1px var(--card-border);
+  background-color: var(--card-bg);
+  border-radius: 12px;
   margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  color: var(--text-primary)
+}
+
+.body.dark-theme .logo {
+  filter: brightness(0) invert(1);
+  color: var(--neutral-100);
+}
+
+.divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
 }
 
 .title {
+  display: flex;
+  justify-content: flex-start;
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -128,6 +153,8 @@ body.dark-theme .dark-icon {
 /* Filter Buttons */
 .filter-buttons {
   display: flex;
+  align-items: flex-end;
+  justify-content: right;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
@@ -266,10 +293,10 @@ body.dark-theme .dark-icon {
     padding: 1rem;
   }
   
-  .header-content {
+  .divider {
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
-    text-align: center;
   }
   
   .title {
@@ -291,12 +318,15 @@ body.dark-theme .dark-icon {
 }
 
 @media (max-width: 480px) {
-  .extension-header {
+  .divider {
     flex-direction: column;
     text-align: center;
+    padding: 0;
   }
-  
+  .extension-info {
+    align-items: center;
+  }
   .extension-logo {
-    align-self: center;
+    align-self: flex-start;
   }
 }
