@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://github.com/ibidiuntold/browser-extensions-manager-ui-main)
-- Live Site URL: [](https://ibidiuntold.github.io/browser-extensions-manager-ui-main/)
+- Solution URL: [Browser Extensions Manager GitHub](https://github.com/ibidiuntold/browser-extensions-manager-ui-main)
+- Live Site URL: [Static Page Website for Browser Extensions](https://ibidiuntold.github.io/browser-extensions-manager-ui-main/)
 
 ## My process
 
