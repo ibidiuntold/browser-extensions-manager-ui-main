@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [](https://github.com/ibidiuntold/browser-extensions-manager-ui-main)
+- Live Site URL: [](https://ibidiuntold.github.io/browser-extensions-manager-ui-main/)
 
 ## My process
 
@@ -56,33 +56,33 @@ Users should be able to:
 
 - I learned how to call back functions in Javascript. 
 - I also learned how to toggle between light theme mode and dark theme using pure CSS
-- I learned how to properly nest <div></div> elements in my line of code so that the proper styling can be done
+- I learned how to properly nest ``` <div></div> ``` elements in my line of code so that the proper styling can be done
 
-
-To see how you can add code snippets, see below:
+I am particularly proud of how this code right here below turned out:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+  <div class="button-toggle-style">
+          <button class="remove-btn">Remove</button>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* Toggle Switch Styles */
+.button-toggle-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I still don't know how to properly write JavaScript code so I will have to work on getting down the functionality of writing syntax in JS down. 
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
